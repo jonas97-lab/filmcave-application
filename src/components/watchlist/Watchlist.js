@@ -51,7 +51,9 @@ function Watchlist() {
 								<div
 									className='watchlist__picture'
 									style={{
-										backgroundImage: `url('https://image.tmdb.org/t/p/w1280${favourite.poster_path}')`,
+										backgroundImage: favourite.poster_path
+											? `url('https://image.tmdb.org/t/p/w1280${favourite.poster_path}')`
+											: `url('https://bit.ly/3gRaFw8')`,
 									}}
 								>
 									<Link to='#' onClick={() => removeFavourite(favourite)}>
