@@ -58,7 +58,7 @@ function SearchTVSeries() {
 			className='search'
 			initial={{ opacity: 0 }}
 			animate={{ opacity: 1 }}
-			transition={{ delay: 0.2, duration: 0.6 }}
+			transition={{ delay: 0.2, duration: 0.2 }}
 		>
 			<h2 className='search__title search__title--primary'>
 				{t('search__heading--series')}

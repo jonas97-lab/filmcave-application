@@ -28,7 +28,7 @@ function Cast({ fetchData }) {
 			className='cast'
 			initial={{ opacity: 0 }}
 			animate={{ opacity: 1 }}
-			transition={{ delay: 0.2, duration: 0.6 }}
+			transition={{ delay: 0.2, duration: 0.2 }}
 		>
 			{credits.length > 0 && (
 				<>

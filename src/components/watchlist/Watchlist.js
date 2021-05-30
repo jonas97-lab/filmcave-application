@@ -38,7 +38,7 @@ function Watchlist() {
 			className='watchlist'
 			initial={{ opacity: 0 }}
 			animate={{ opacity: 1 }}
-			transition={{ delay: 0.2, duration: 0.6 }}
+			transition={{ delay: 0.2, duration: 0.2 }}
 		>
 			<h2 className='watchlist__title watchlist__title--primary'>
 				{t('nav__link--six')}

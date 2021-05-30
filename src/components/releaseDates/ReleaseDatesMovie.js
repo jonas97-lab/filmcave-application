@@ -41,7 +41,7 @@ function ReleaseDatesMovie() {
 			className='release'
 			initial={{ opacity: 0 }}
 			animate={{ opacity: 1 }}
-			transition={{ delay: 0.2, duration: 1.2 }}
+			transition={{ delay: 0.2, duration: 0.2 }}
 		>
 			<h2 className='release__title'>{t('release__title')}</h2>
 			<p className='release__description'>{t('release__paragraph')}</p>

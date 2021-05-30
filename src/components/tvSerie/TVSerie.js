@@ -39,7 +39,7 @@ function TVSerie() {
 			className='serie'
 			initial={{ opacity: 0 }}
 			animate={{ opacity: 1 }}
-			transition={{ delay: 0.2, duration: 0.6 }}
+			transition={{ delay: 0.2, duration: 0.2 }}
 		>
 			<h2 className='movie__title'>
 				{t('show__title--one')} {infoSerie.name}

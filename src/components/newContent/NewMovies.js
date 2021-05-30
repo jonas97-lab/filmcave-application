@@ -43,7 +43,7 @@ function NewMovies() {
 			className='card'
 			initial={{ opacity: 0 }}
 			animate={{ opacity: 1 }}
-			transition={{ delay: 0.2, duration: 0.6 }}
+			transition={{ delay: 0.2, duration: 0.2 }}
 		>
 			<h2 className='card__title card__title--primary'>
 				{t('movies__title--two')}
