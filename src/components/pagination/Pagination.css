@@ -18,6 +18,10 @@
 	border-radius: 0.1vw;
 }
 
+.pagination__button--prev {
+	margin-right: 10px;
+}
+
 .pagination__button:hover {
 	background-color: #0f52b9;
 }
