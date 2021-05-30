@@ -1,0 +1,22 @@
+.watchlist__button {
+	width: 100%;
+	left: 0;
+	bottom: 0;
+	border: none;
+	position: absolute;
+	font-size: 14px;
+	cursor: pointer;
+	color: #fff;
+	background-color: rgb(51, 51, 51);
+	padding: 10px 25px;
+}
+
+.watchlist__button:hover {
+	height: 40px;
+}
+
+.fa-plus-circle,
+.fa-minus-circle {
+	color: #fff;
+	margin-left: 8px;
+}

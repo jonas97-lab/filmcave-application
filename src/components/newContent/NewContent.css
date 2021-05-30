@@ -1,0 +1,176 @@
+.card {
+	margin: 20px;
+}
+
+.card__title--primary {
+	margin: 60px 20px 15px;
+	padding: 5px 20px;
+	font-weight: 400;
+	background-color: #00000003;
+	font-size: 1.7rem;
+	letter-spacing: 2px;
+	text-transform: uppercase;
+}
+
+.card__wrapper {
+	display: flex;
+	overflow-y: hidden;
+	overflow-x: scroll;
+	margin: 0 20px 20px;
+}
+
+.card__wrapper::-webkit-scrollbar {
+	display: none;
+}
+
+.card__size {
+	width: 250px;
+	height: 350px;
+	perspective: 20000px;
+	margin: 25px 10px 0;
+	transition: 1s ease-in-out;
+}
+
+.card__formatter {
+	font-family: 'Open Sans', sans-serif;
+	width: 100%;
+	height: 100%;
+	transition: transform 0.6s;
+	transform-style: preserve-3d;
+	font-size: 12px;
+}
+
+.card__size:hover .card__formatter {
+	transform: rotateY(180deg);
+}
+
+.card__face--front {
+	cursor: pointer;
+}
+
+.card__face--front,
+.card__face--back {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	backface-visibility: hidden;
+	box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+	text-align: center;
+}
+
+.card__face--front::after {
+	content: '';
+	position: absolute;
+	z-index: 1;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: linear-gradient(
+		226deg,
+		rgba(255, 255, 255, 0.4) 0%,
+		rgba(255, 255, 255, 0.4) 35%,
+		rgba(255, 255, 255, 0.2) 42%,
+		rgba(255, 255, 255, 0) 60%
+	);
+}
+
+.card__label {
+	font-family: 'Poppins', sans-serif;
+	position: absolute;
+	top: 12px;
+	left: 12px;
+	background: #0073cf;
+	font-size: 14px;
+	border-radius: 50%;
+	color: #fff;
+	display: block;
+	width: 2.3rem;
+	height: 2.2rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.green {
+	color: #00ff00;
+}
+
+.yellow {
+	color: #ffa500;
+}
+
+.red {
+	color: #ff0000;
+}
+
+.card img {
+	width: 100%;
+	height: 100%;
+}
+
+.card__face--back {
+	background-color: #fff;
+	border: 1px solid rgba(0, 0, 0, 0.06);
+	transform: rotateY(180deg);
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-end;
+	align-items: center;
+	padding: 15px;
+}
+
+.card__title--secondary {
+	color: #3a3a3a;
+}
+
+.card__date {
+	color: #a0a0a0;
+	margin-top: 1rem;
+	font-size: 1em;
+	font-weight: 300;
+	text-align: center;
+	letter-spacing: 1.5px;
+}
+
+.card__description {
+	color: #7c8097;
+	font-size: 0.7rem;
+	font-weight: 300;
+	margin-top: 0.5rem;
+	letter-spacing: 1.5px;
+	text-transform: uppercase;
+	text-align: center;
+}
+
+.card__description div {
+	margin-top: 0.5rem;
+}
+
+.card__border {
+	width: 80%;
+	height: 1px;
+	display: block;
+	margin: 1.6em;
+	background: #e9eff6;
+}
+
+.card__button {
+	letter-spacing: 1px;
+	text-transform: uppercase;
+	color: #fff;
+	background-image: linear-gradient(315deg, #2a2a72 0%, #0073cf 74%);
+	width: 130px;
+	height: 42px;
+	outline: none;
+	border: none;
+	cursor: pointer;
+	border-radius: 70px;
+	margin: 10px 0 15px;
+	box-shadow: 0 13px 26px rgba(#000, 0.16), 0 3px 6px rgba(#000, 0.16);
+	transition: 0.2s ease-in-out;
+	text-decoration: none;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}

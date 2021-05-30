@@ -1,0 +1,153 @@
+.serie {
+	width: 95%;
+	margin: 0 auto;
+}
+
+.serie__title {
+	margin: 60px 20px 30px;
+	padding: 5px 20px;
+	font-weight: 400;
+	background-color: #00000003;
+	font-size: 1.7rem;
+	letter-spacing: 2px;
+	text-transform: uppercase;
+}
+
+.serie__wrapper {
+	display: flex;
+	flex-direction: column;
+}
+
+.serie__details {
+	display: flex;
+	margin: 20px 0 40px 20px;
+}
+
+.serie__picture {
+	background-size: cover;
+	background-position: center;
+	min-width: 500px;
+	min-height: 725px;
+	margin: 0 75px;
+	border: 2px solid #888;
+	position: relative;
+}
+
+.serie__genres {
+	position: absolute;
+	top: 12px;
+	left: 12px;
+	background-color: #6050dc;
+	font-size: 13px;
+	padding: 8px 14px;
+	color: #fff;
+	border-radius: 0.1vw;
+	letter-spacing: 1px;
+	text-align: center;
+}
+
+.serie__body {
+	display: flex;
+	align-items: center;
+	font-weight: 300;
+}
+
+.serie__content a {
+	text-decoration: none;
+}
+
+.serie__rating {
+	display: flex;
+	align-items: center;
+	margin: 10px 0;
+	font-size: 1.4rem;
+	font-weight: bold;
+}
+
+.serie__rating span {
+	font-weight: lighter;
+	font-size: small;
+}
+
+.fa-star {
+	color: #f5c518;
+	margin-right: 5px;
+}
+
+.serie__tooltip {
+	position: relative;
+}
+
+.serie__tooltip .serie__tooltiptext {
+	visibility: hidden;
+	width: 160px;
+	background-color: #3a3a3a;
+	color: #fff;
+	text-align: center;
+	padding: 10px 0;
+	border-radius: 5px;
+	position: absolute;
+	z-index: 1;
+}
+
+.serie__tooltip .serie__tooltiptext::after {
+	content: ' ';
+	position: absolute;
+	bottom: 100%;
+	left: 50%;
+	margin-left: -5px;
+	border-width: 5px;
+	border-style: solid;
+	border-color: transparent transparent black transparent;
+}
+
+.serie__tooltip:hover .serie__tooltiptext {
+	visibility: visible;
+}
+
+.serie__info {
+	font-weight: bold;
+	margin-top: 20px;
+}
+
+.serie__info span {
+	font-weight: 300;
+}
+
+.serie__button {
+	padding: 15px 25px;
+	outline: none;
+	color: #fff;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 1rem;
+	cursor: pointer;
+	background-color: #a0a0a0;
+	margin: 30px 0;
+	border-radius: 0.1vw;
+}
+
+.serie__button:hover {
+	background-color: #585858;
+}
+
+.serie__availability {
+	font-weight: 300;
+}
+
+.serie__networks ul {
+	list-style: square;
+	margin-left: 20px;
+}
+
+.serie__networks li {
+	font-weight: 300;
+	margin: 3px 0;
+}
+
+@media only screen and (max-width: 1024px) {
+	.serie__picture {
+		display: none;
+	}
+}

@@ -1,70 +1,68 @@
-# Getting Started with Create React App
+# **Project FilmCave**
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+FilmCave is een opkomende filmdatabank op het web. Het biedt een uitgebreide database aan met informatie over films, tv-series en casts. De site is echt een gigantisch depot van filminformatie, en het grootste deel ervan is volledig gratis en zeer toegankelijk. Als je ooit onderzoek gaat doen naar een film of acteur, ben je bij FilmCave aan het juiste adres.
+<br/><br/>
 
-## Available Scripts
+## Het doel van FilmCave
 
-In the project directory, you can run:
+FilmCave wordt de meest gezaghebbende bron van entertainmentinformatie, met functies die zijn ontworpen om fans te helpen de wereld van films en series te verkennen. FilmCave helpt de kijker om de beste film of serie te vinden en alles uit hun tijd te halen.
+<br/><br/>
 
-### `npm start`
+## Het eindresultaat
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+De applicatie is beschikbaar in zowel **light mode** als in **dark mode**.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+### Light mode
 
-### `npm test`
+![FilmCave application in light mode](src/img/preview-light.png)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Dark mode
 
-### `npm run build`
+![FilmCave application in dark mode](src/img/preview-dark.png)
+<br/><br/>
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Gebruikte framework
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+[React 17.0.2](https://reactjs.org/)
+<br/><br/>
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Lokale server
 
-### `npm run eject`
+Als je het project gecloned hebt naar jouw locale machine, installeer je eerst de node_modules door het volgende commando in de terminal te runnen:
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+`npm install`
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Wanneer dit klaar is, kun je de applicatie starten met behulp van:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+`npm start`
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+Open http://localhost:3000 om de pagina in de browser te bekijken.
+<br/><br/>
 
-## Learn More
+## Inloggen
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Om gebruik te kunnen maken van FilmCave moet je je eerst registreren. Daarna kun je inloggen en jouw gegevens inzien en beheren.<br/><br/>
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## API
 
-### Code Splitting
+Link naar The Movie Database (TMDB) API: </br>
+https://developers.themoviedb.org/3/getting-started/introduction
+<br/><br/>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## Credits
 
-### Analyzing the Bundle Size
+Inspiratiebronnen:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+- https://www.freecodecamp.org/news/react-movie-app-tutorial/
+- https://medium.com/@levifuller/how-to-build-a-scalable-movie-browser-app-using-react-and-redux-in-visual-studio-code-dea8bfb3eabe
+  <br/><br/>
 
-### Making a Progressive Web App
+## Status
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Er wordt momenteel _niet_ actief aan het project gewerkt.
+<br/><br/>
 
-### Advanced Configuration
+## Author & support
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+[Jonas Tesfay](https://www.linkedin.com/in/jonas-tesfay-963557173/)</br>
+Voor eventuele vragen kun je mij gerust een bericht sturen 😀 !

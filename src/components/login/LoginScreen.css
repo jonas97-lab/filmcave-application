@@ -1,0 +1,85 @@
+.form {
+	position: relative;
+	overflow: hidden;
+}
+
+.form__background {
+	height: 100vh;
+	width: 100vw;
+	background-image: linear-gradient(315deg, #2a2a72 0%, #0073cf 74%);
+}
+
+.form__wrapper {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 100%;
+}
+
+.form__content {
+	border-radius: 10px;
+	background: #fff;
+	max-width: 450px;
+	box-shadow: 0 30px 60px 0 rgba(0, 0, 0, 0.3);
+	text-align: center;
+}
+
+.form__title {
+	text-transform: uppercase;
+	margin: 50px 25px 20px 25px;
+	font-size: 28px;
+	font-weight: 500;
+}
+
+.form__title .span {
+	font-weight: 700;
+}
+
+.form__input--email,
+.form__input--password {
+	font-family: 'Poppins', sans-serif;
+	background-color: #f6f6f6;
+	outline: none;
+	border: none;
+	border-radius: 5px;
+	padding: 15px 80px;
+	text-align: center;
+	font-size: 14px;
+	margin: 10px;
+}
+
+.form__tagline {
+	font-size: 14px;
+}
+
+.form__tagline span {
+	font-weight: 600;
+	cursor: pointer;
+}
+
+.form__tagline span:hover {
+	text-decoration: underline;
+}
+
+.form__button {
+	font-family: 'Poppins', sans-serif;
+	border: none;
+	outline: none;
+	border-radius: 5px;
+	margin: 30px 5px 40px;
+	cursor: pointer;
+	color: #fff;
+	padding: 10px 60px;
+	text-transform: uppercase;
+	font-size: 16px;
+	letter-spacing: 1px;
+	transition: 0.2s ease-in;
+}
+
+.form__button {
+	background-color: #0073cf;
+}
+
+.form__button:hover {
+	background-color: #0f52b9;
+}
