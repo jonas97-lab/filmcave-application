@@ -1,116 +1,259 @@
-import React, { useState, useEffect } from 'react';
-import axios from '../../axios';
-import 'components/newContent/NewContent.css';
-import { motion } from 'framer-motion';
-import spinner from 'img/spinner.gif';
-import { Link } from 'react-router-dom';
-import { useTranslation } from 'react-i18next';
+import React, { useState, useEffect } from "react";
+import axios from "../../axios";
+import spinner from "img/spinner.gif";
+import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
+import styled from "styled-components";
+import { css } from "styled-components";
+
+const Card = styled.div`
+  margin: 20px;
+
+  img {
+    width: 100%;
+    height: 100%;
+  }
+`;
+
+const CardTitlePrimary = styled.h2`
+  margin: 60px 20px 15px;
+  padding: 5px 20px;
+  font-weight: 400;
+  background-color: #00000003;
+  font-size: 1.7rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+`;
+
+const CardWrapper = styled.div`
+  display: flex;
+  overflow-y: hidden;
+  overflow-x: scroll;
+  margin: 0 20px 20px;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+`;
+
+const CardFormatter = styled.div`
+  font-family: "Open Sans", sans-serif;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  font-size: 12px;
+`;
+
+const CardSize = styled.div`
+  width: 250px;
+  height: 350px;
+  perspective: 20000px;
+  margin: 25px 10px 0;
+  transition: 1s ease-in-out;
+
+  &:hover ${CardFormatter} {
+    transform: rotateY(180deg);
+  }
+`;
+
+const card = css`
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  text-align: center;
+`;
+
+const CardFaceFront = styled.div`
+  ${card}
+
+  cursor: pointer;
+
+  &:after {
+    content: "";
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      226deg,
+      rgba(255, 255, 255, 0.4) 0%,
+      rgba(255, 255, 255, 0.4) 35%,
+      rgba(255, 255, 255, 0.2) 42%,
+      rgba(255, 255, 255, 0) 60%
+    );
+  }
+`;
+
+const CardFaceBack = styled.div`
+  ${card}
+
+  background-color: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  transform: rotateY(180deg);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 15px;
+`;
+
+const CardLabel = styled.div`
+  font-family: "Poppins", sans-serif;
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background: #0073cf;
+  font-size: 14px;
+  border-radius: 50%;
+  color: #fff;
+  display: block;
+  width: 2.3rem;
+  height: 2.2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
+const CardPicture = styled.img``;
+
+const CardTitleSecondary = styled.h1`
+  color: #3a3a3a;
+`;
+
+const CardDate = styled.p`
+  color: #a0a0a0;
+  margin-top: 1rem;
+  font-size: 1em;
+  font-weight: 300;
+  text-align: center;
+  letter-spacing: 1.5px;
+`;
+
+const CardDescription = styled.div`
+  color: #7c8097;
+  font-size: 0.7rem;
+  font-weight: 300;
+  margin-top: 0.5rem;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  text-align: center;
+
+  > div {
+    margin-top: 0.5rem;
+  }
+`;
+
+const CardBorder = styled.div`
+  width: 80%;
+  height: 1px;
+  display: block;
+  margin: 1.6em;
+  background: #e9eff6;
+`;
+
+const CardButton = styled(Link)`
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #fff;
+  background-image: linear-gradient(315deg, #2a2a72 0%, #0073cf 74%);
+  width: 130px;
+  height: 42px;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  border-radius: 70px;
+  margin: 10px 0 15px;
+  box-shadow: 0 13px 26px rgba(#000, 0.16), 0 3px 6px rgba(#000, 0.16);
+  transition: 0.2s ease-in-out;
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
 
 function NewMovies() {
-	const imgUrl = 'https://image.tmdb.org/t/p/w1280';
-	const { t } = useTranslation();
+  const imgUrl = "https://image.tmdb.org/t/p/w1280";
+  const { t } = useTranslation();
 
-	const [newMovies, setNewMovies] = useState([]);
-	const [isLoading, setIsLoading] = useState(true);
+  const [newMovies, setNewMovies] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
 
-	useEffect(() => {
-		async function fetchMoviesData() {
-			try {
-				const request = await axios.get(
-					`/movie/upcoming?api_key=${process.env.REACT_APP_THEMOVIEDB_API_KEY}`
-				);
-				setNewMovies(request.data.results);
-				setIsLoading(false);
-			} catch (err) {
-				console.error(err);
-			}
-		}
-		fetchMoviesData();
-	}, []);
+  useEffect(() => {
+    async function fetchMoviesData() {
+      try {
+        const request = await axios.get(
+          `/movie/upcoming?api_key=${process.env.REACT_APP_THEMOVIEDB_API_KEY}`
+        );
+        setNewMovies(request.data.results);
+        setIsLoading(false);
+      } catch (err) {
+        console.error(err);
+      }
+    }
+    fetchMoviesData();
+  }, []);
 
-	const setVoteClass = (vote) => {
-		if (vote >= 8) {
-			return 'green';
-		} else if (vote >= 6) {
-			return 'yellow';
-		} else {
-			return 'red';
-		}
-	};
-
-	return (
-		<motion.div
-			className='card'
-			initial={{ opacity: 0 }}
-			animate={{ opacity: 1 }}
-			transition={{ delay: 0.2, duration: 0.2 }}
-		>
-			<h2 className='card__title card__title--primary'>
-				{t('movies__title--two')}
-			</h2>
-			{isLoading ? (
-				<img
-					src={spinner}
-					style={{
-						width: '75px',
-						marginTop: '60px',
-						margin: 'auto',
-						display: 'block',
-					}}
-					alt='spinner'
-				/>
-			) : (
-				<div className='card__wrapper'>
-					{newMovies?.map((newMovie) => (
-						<div key={newMovie.id}>
-							<div className='card__size'>
-								<div className='card__formatter'>
-									<div className='card__face card__face--front'>
-										<div className='card__label'>
-											<span
-												className={`card__tag ${setVoteClass(
-													newMovie.vote_average
-												)}`}
-											>
-												{newMovie.vote_average}
-											</span>
-										</div>
-										<img
-											className='card__picture'
-											src={`${imgUrl}${newMovie.poster_path}`}
-											alt={newMovie.title || newMovie.original_title}
-										/>
-									</div>
-									<div className='card__face card__face--back'>
-										<h1 className='card__title card__title--secondary'>
-											{newMovie.title || newMovie.original_title}
-										</h1>
-										<p className='card__date'>{newMovie.release_date}</p>
-										<div className='card__description'>
-											<div>
-												{t('flipcard__heading--one')}: {newMovie.popularity}
-											</div>
-											<div>
-												{t('flipcard__heading--two')} {newMovie.vote_count}{' '}
-												{t('flipcard__heading--one')}
-											</div>
-										</div>
-										<div className='card__border'></div>
-										<Link
-											to={`/movies/${newMovie.id}`}
-											className='card__button'
-										>
-											{t('button--three')}
-										</Link>
-									</div>
-								</div>
-							</div>
-						</div>
-					))}
-				</div>
-			)}
-		</motion.div>
-	);
+  return (
+    <Card>
+      <CardTitlePrimary>{t("movies__title--two")}</CardTitlePrimary>
+      {isLoading ? (
+        <img
+          src={spinner}
+          style={{
+            width: "75px",
+            marginTop: "60px",
+            margin: "auto",
+            display: "block",
+          }}
+          alt="spinner"
+        />
+      ) : (
+        <CardWrapper>
+          {newMovies?.map((newMovie) => (
+            <div key={newMovie.id}>
+              <CardSize>
+                <CardFormatter>
+                  <CardFaceFront>
+                    <CardLabel>
+                      <span>{newMovie.vote_average}</span>
+                    </CardLabel>
+                    <CardPicture
+                      src={`${imgUrl}${newMovie.poster_path}`}
+                      alt={newMovie.title || newMovie.original_title}
+                    />
+                  </CardFaceFront>
+                  <CardFaceBack>
+                    <CardTitleSecondary>
+                      {newMovie.title || newMovie.original_title}
+                    </CardTitleSecondary>
+                    <CardDate>{newMovie.release_date}</CardDate>
+                    <CardDescription>
+                      <div>
+                        {t("flipcard__heading--one")}: {newMovie.popularity}
+                      </div>
+                      <div>
+                        {t("flipcard__heading--two")} {newMovie.vote_count}{" "}
+                        {t("flipcard__heading--one")}
+                      </div>
+                    </CardDescription>
+                    <CardBorder />
+                    <CardButton to={`/movies/${newMovie.id}`}>
+                      {t("button--three")}
+                    </CardButton>
+                  </CardFaceBack>
+                </CardFormatter>
+              </CardSize>
+            </div>
+          ))}
+        </CardWrapper>
+      )}
+    </Card>
+  );
 }
 
 export default NewMovies;
