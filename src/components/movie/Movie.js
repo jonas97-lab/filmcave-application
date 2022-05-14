@@ -266,7 +266,7 @@ function Movie() {
                   <FaPlayCircle className="far fa-play-circle" />
                 </MovieButtonTwo>
               </MovieButtons>
-              <p className="movie__description">
+              <p>
                 {t("movie__description")}{" "}
                 <Link to={`/release-dates-movie/${infoMovie.id}`}>
                   {t("movie__description--release")}

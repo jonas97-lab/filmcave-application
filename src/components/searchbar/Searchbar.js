@@ -41,7 +41,6 @@ function Searchbar({ getQuery }) {
   return (
     <SearchBar>
       <SearchBarInput
-        className="searchbar__input"
         type="text"
         placeholder={t("searchbar__text")}
         value={text}

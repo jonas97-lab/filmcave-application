@@ -36,13 +36,11 @@ const ShowsCards = styled.div`
 `;
 
 const scrolling = keyframes`
-
  0% {
 	transform: translateX(0);
 }
 100% {
 	transform: translateX(-240vw);
-
 }
 `;
 
@@ -94,12 +92,6 @@ const ShowsCard = styled.div`
 		height: 225px;
 		width: 400px;
 	
-`;
-
-const ShowsTitleSecondary = styled.h1`
-  width: 100%;
-  height: 100%;
-  transition: all 0.5s cubic-bezier(0.8, 0.5, 0.2, 1.4);
 `;
 
 const ShowsParagraph = styled.p`
@@ -167,9 +159,6 @@ function BannerMovies() {
                 alt={movie.title || movie.original_title}
               />
               <ShowsContent>
-                <ShowsTitleSecondary>
-                  {movie.title || movie.original_title}
-                </ShowsTitleSecondary>
                 <ShowsParagraph>{truncate(movie.overview, 200)}</ShowsParagraph>
                 <Link to={`/movies/${movie.id}`}>
                   <ShowsButton>{t("button--three")}</ShowsButton>

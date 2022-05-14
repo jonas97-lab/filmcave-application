@@ -38,13 +38,6 @@ const RowTitleSecondary = styled.h3`
   color: #fff;
 `;
 
-const RowDescription = styled.p`
-  transform: translateY(30px);
-  opacity: 0;
-  transition: all 0.3s ease-out 0.2s;
-  color: #fff;
-`;
-
 const FaAngleDownIcon = styled.i`
   color: #ffffff80;
   transform: translateY(30px);
@@ -81,10 +74,6 @@ function RowTVSeries({ title, fetchData, secondRow }) {
     }
   };
 
-  function truncate(str, n) {
-    return str?.length > n ? str.substr(0, n - 1) + "..." : str;
-  }
-
   return (
     <Row>
       <RowTitlePrimary>{title}</RowTitlePrimary>
@@ -116,10 +105,6 @@ function RowTVSeries({ title, fetchData, secondRow }) {
                   <RowTitleSecondary>
                     {serie.name || serie.original_name}
                   </RowTitleSecondary>
-                  <RowDescription>
-                    {truncate(serie.overview, 125)}
-                  </RowDescription>
-
                   <FaAngleDownIcon className="fas fa-angle-down fa-2x" />
                 </div>
               </Link>

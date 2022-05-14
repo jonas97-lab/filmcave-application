@@ -35,16 +35,13 @@ const ShowsCards = styled.div`
 `;
 
 const scrolling = keyframes`
-
  0% {
 	transform: translateX(0);
 }
 100% {
 	transform: translateX(-240vw);
-
 }
 `;
-
 const ShowsPicture = styled.img`
   width: 100%;
   height: 100%;
@@ -93,12 +90,6 @@ const ShowsCard = styled.div`
 		height: 225px;
 		width: 400px;
 	
-`;
-
-const ShowsTitleSecondary = styled.h1`
-  width: 100%;
-  height: 100%;
-  transition: all 0.5s cubic-bezier(0.8, 0.5, 0.2, 1.4);
 `;
 
 const ShowsParagraph = styled.p`
@@ -166,9 +157,6 @@ function BannerTVSeries() {
                 alt={serie.name || serie.original_name}
               />
               <ShowsContent>
-                <ShowsTitleSecondary>
-                  {serie.name || serie.original_name}
-                </ShowsTitleSecondary>
                 <ShowsParagraph>{truncate(serie.overview, 200)}</ShowsParagraph>
                 <Link to={`/tv-series/${serie.id}`}>
                   <ShowsButton>{t("button--three")}</ShowsButton>

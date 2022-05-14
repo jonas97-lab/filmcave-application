@@ -74,22 +74,20 @@ const FormTagline = styled.p`
 `;
 
 const FormButtons = styled.div`
-  font-family: "Poppins", sans-serif;
-  border: none;
-  outline: none;
-  border-radius: 5px;
-  margin: 30px 5px 40px;
-  cursor: pointer;
-  color: #fff;
-  padding: 10px 60px;
-  text-transform: uppercase;
-  font-size: 16px;
-  letter-spacing: 1px;
-  transition: 0.2s ease-in;
-  background-color: #0073cf;
-
-  &:hover {
-    background-color: #0f52b9;
+  button {
+    font-family: "Poppins", sans-serif;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    margin: 30px 5px 40px;
+    cursor: pointer;
+    color: #fff;
+    padding: 10px 60px;
+    text-transform: uppercase;
+    font-size: 16px;
+    letter-spacing: 1px;
+    transition: 0.2s ease-in;
+    background-color: #0073cf;
   }
 `;
 
@@ -152,9 +150,7 @@ function LoginScreen() {
               New to FilmCave? <span onClick={register}>Sign Up now!</span>
             </FormTagline>
             <FormButtons>
-              <button className="form__button" onClick={signIn}>
-                Log In
-              </button>
+              <button onClick={signIn}>Log In</button>
             </FormButtons>
           </FormContent>
         </FormWrapper>

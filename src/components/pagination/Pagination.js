@@ -87,19 +87,13 @@ function Pagination({
       {searchFavourites.length > 0 && (
         <PaginationButtons>
           {currentPage > 1 && searchFavourites.length <= 20 && (
-            <PaginationButtonPrev
-              className="pagination__button pagination__button--prev"
-              onClick={prevResults}
-            >
+            <PaginationButtonPrev onClick={prevResults}>
               <i className="fas fa-arrow-circle-left" />
               {t("button--eight")}
             </PaginationButtonPrev>
           )}
           {searchFavourites.length >= 20 && (
-            <PaginationButtonNext
-              className="pagination__button pagination__button--next"
-              onClick={nextResults}
-            >
+            <PaginationButtonNext onClick={nextResults}>
               {t("button--nine")}
               <FaArrowCircleRightIcon className="fas fa-arrow-circle-right" />
             </PaginationButtonNext>
