@@ -34,12 +34,11 @@
 
 .row__overview--secondRow {
   position: absolute;
-  bottom: 0;
-  left: 0;
-  padding: 20px;
-  text-align: center;
   color: #fff;
   font-size: 12px;
+  left: 50%;
+  right: 50%;
+  bottom: 20px;
 }
 
 .row__overview--otherRows {
