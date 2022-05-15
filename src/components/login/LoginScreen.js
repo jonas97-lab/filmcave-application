@@ -34,6 +34,7 @@ const FormTitle = styled.h3`
   margin: 50px 25px 20px 25px;
   font-size: 28px;
   font-weight: 500;
+  color: #000;
 
   span {
     font-weight: 700;
@@ -62,6 +63,7 @@ const FormInputPassword = styled.input`
 
 const FormTagline = styled.p`
   font-size: 14px;
+  color: #000;
 
   span {
     font-weight: 600;
